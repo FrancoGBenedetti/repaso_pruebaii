@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tareas</h1>
+
+
+<br>
+<div class="container">
+  <div class="row">
+    <% @tareas.each do |tarea| %>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <%= image_tag tarea.image %>
+          <div class="card-body">
+            <h5 class="card-title"><%= tarea.title %></h5>
+            <p class="card-text"><%= tarea.content %></p>
+            <%= link_to 'Show', tarea, class: 'btn btn-sm btn-success' %>
+            <%= link_to 'Edit', edit_tarea_path(tarea), class: 'btn btn-sm btn-success' %>
+            <%= link_to 'Destroy', tarea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-success' %>
+            <%= link_to 'Edit', done_tasks_tarea_path(tarea), class: 'btn btn-sm btn-success' %>
+
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'New Tarea', new_tarea_path %>

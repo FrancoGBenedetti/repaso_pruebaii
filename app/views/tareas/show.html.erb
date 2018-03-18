@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tarea.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @tarea.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @tarea.image %>
+</p>
+
+<%= link_to 'Edit', edit_tarea_path(@tarea) %> |
+<%= link_to 'Back', tareas_path %>
